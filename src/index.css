@@ -80,3 +80,16 @@ select {
     scroll-behavior: auto !important;
   }
 }
+@font-face {
+  src: url("./assets/fonts/Roboto/Roboto-Light.ttf");
+  font-family: roboto-light;
+}
+
+@font-face {
+  src: url("./assets/fonts/Roboto/Roboto-Regular.ttf");
+  font-family: roboto-reg;
+}
+@font-face {
+  src: url("./assets/fonts/Roboto/Roboto-Medium.ttf");
+  font-family: roboto-md;
+}
