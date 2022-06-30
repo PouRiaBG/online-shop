@@ -1,0 +1,41 @@
+.container {
+  margin: 0 auto;
+  width: 90%;
+  height: 80vh;
+  display: flex;
+}
+.container aside,
+section {
+  width: 50%;
+}
+.container aside button {
+  background-color: #279527;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 5rem;
+  border: none;
+  padding: 1rem 3rem;
+  cursor: pointer;
+}
+
+.container aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.container aside h1 {
+  font-size: 4rem;
+  color: var(--title-color);
+}
+.container aside p {
+  color: #ababab;
+  font-family: roboto-light;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.container section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
