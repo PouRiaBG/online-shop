@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <header className={styles.container}>
       <section className={styles.left}>
-        <p>Organicfy</p>
+        <p>Organic</p>
       </section>
       <section className={styles.main}>
         <NavLink
