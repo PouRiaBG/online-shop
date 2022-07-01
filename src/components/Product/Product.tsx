@@ -1,32 +1,36 @@
 import { Button, Card } from "antd";
 import React from "react";
+import { useStore } from "../../store/store";
 import styles from "./product.module.css";
 
 interface IProps {
-  title: string;
-  id: number;
+  name: string;
   price: number;
-  image?: string;
+  weight: number;
+  img?: string;
 }
 
 const { Meta } = Card;
-const Product: React.FC<IProps> = (props) => {
-  const { title, id, price, image } = props;
+const Product: React.FC<IProps> = (props: IProps) => {
+  const { name, weight, price, img } = props;
+  const addProductToBasket = useStore((state) => state.addProdcut);
+
   const addToCard = () => {
-    console.log("Added");
+    const product = { img: img, name: name, price: price, weight: weight };
+    addProductToBasket(product);
   };
   return (
     <Card
       className={styles.card}
-      cover={<img alt={title} src={image} />}
+      cover={<img alt={name} src={img} />}
       actions={[
         <Button onClick={addToCard} type="default">
           Add to card
         </Button>,
       ]}
     >
-      <Meta title={title} />
-      <h3>Wieght : {}</h3>
+      <Meta title={name} />
+      <h3>Wieght : {weight}</h3>
       <h4>price : {price}</h4>
     </Card>
   );
