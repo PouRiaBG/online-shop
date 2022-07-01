@@ -6,7 +6,7 @@ const Shop = () => {
   return (
     <div className={styles.container}>
       <SortMenu />
-      <ProductList />;
+      <ProductList />
     </div>
   );
 };

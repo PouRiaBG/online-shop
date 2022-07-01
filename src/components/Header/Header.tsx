@@ -1,12 +1,15 @@
 import styles from "./header.module.css";
-import { Avatar, Badge } from "antd";
+import { Avatar, Badge, Button, Modal } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
 import { useStore } from "../../store/store";
 import DropdownMenu from "../Dropdown/Dropdown";
+import { Login } from "../Login/Login";
+
 const Header = () => {
   const products = useStore((state) => state.productsBasket);
-
+  const user = useStore((state) => state.loggedInUser);
+  const isLoggedIn = useStore((state) => state.isLoggedIn);
   const totalPrice = products.reduce((total, currentValue) => {
     return total + currentValue.price;
   }, 0);
@@ -43,18 +46,19 @@ const Header = () => {
         >
           Shop
         </NavLink>
-
-        <NavLink
-          style={({ isActive }) => {
-            return isActive
-              ? { borderBottom: "2px solid green", color: "black" }
-              : { color: "#07070757" };
-          }}
-          className={styles.link}
-          to="admin"
-        >
-          Admin
-        </NavLink>
+        {isLoggedIn && (
+          <NavLink
+            style={({ isActive }) => {
+              return isActive
+                ? { borderBottom: "2px solid green", color: "black" }
+                : { color: "#07070757" };
+            }}
+            className={styles.link}
+            to="dashboard"
+          >
+            Dashboard
+          </NavLink>
+        )}
       </section>
       <section className={styles.right}>
         <Badge
@@ -73,6 +77,7 @@ const Header = () => {
           )}
           <ShoppingCartOutlined style={{ fontSize: "2rem" }} size={30} />
         </Badge>
+        <Login />
       </section>
     </header>
   );

@@ -5,8 +5,10 @@ import { Layout } from "./components/Layout/Layout";
 import { Shop } from "./pages/Shop/Shop";
 
 import "antd/dist/antd.css";
+import { useStore } from "./store/store";
 
 function App() {
+  const isLoggedIn = useStore((state) => state.isLoggedIn);
   return (
     <>
       <Routes>
@@ -14,7 +16,7 @@ function App() {
           <Route path="" element={<Navigate to="blog" />} />
           <Route path="blog" element={<Blog />} />
           <Route path="shop" element={<Shop />} />
-          <Route path="admin" element={<AdminDashbord />} />
+          {isLoggedIn && <Route path="dashboard" element={<AdminDashbord />} />}
         </Route>
       </Routes>
     </>
