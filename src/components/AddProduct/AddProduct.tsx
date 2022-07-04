@@ -2,7 +2,7 @@ import { Button, Form, Input, InputNumber, Modal } from "antd";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { useStore } from "../../store/store";
-import defaultImg from "../../assets/images/default.png";
+import defaultImg from "../../assets/images/default.webp";
 const layout = {
   labelCol: { span: 8 },
   wrapperCol: { span: 16 },

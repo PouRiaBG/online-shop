@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./blog.module.css";
-import imgSrc from "../../assets/images/main.png";
+import imgSrc from "../../assets/images/main.webp";
 
 const Blog = () => {
   return (

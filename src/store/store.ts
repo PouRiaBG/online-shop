@@ -2,13 +2,12 @@ import create from "zustand";
 
 import { devtools, persist, combine } from "zustand/middleware";
 
-import lettuce from "../assets/images/main.png";
-import pear from "../assets/images/pear.png";
-import straberry from "../assets/images/straberry.png";
-import cherries from "../assets/images/Cherries.png";
+import lettuce from "../assets/images/main.webp";
+import pear from "../assets/images/pear.webp";
+import straberry from "../assets/images/straberry.webp";
+import cherries from "../assets/images/Cherries.webp";
 
-import apple from "../assets/images/apple.png";
-import React from "react";
+import apple from "../assets/images/apple.webp";
 
 const users = [
   { title: "Admin", isAdmin: true, hasAccess: true },
